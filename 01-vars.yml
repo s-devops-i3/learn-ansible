@@ -1,0 +1,10 @@
+- name: playbook for variable
+  hosts: localhost
+  tasks:
+    - name: print output of uptime
+      ansible.builtin.shell: uptime
+      register: "{{ OUTPUT }}"
+
+    - name: print OUTPUT
+      ansible.builtin.debug:
+        msg: "{{ OUTPUT }}"
